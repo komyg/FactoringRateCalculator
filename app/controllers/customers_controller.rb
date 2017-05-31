@@ -16,8 +16,7 @@ class CustomersController < ApplicationController
       end
     end
 
-    user = Customer.new(name: customer_params[:name], email: customer_params[:email], password: customer_params[:password], company_id: company.id)
-    #user = company.customers.new(name: params[:name], email: params[:email], password: params[:password], company_id: company.id)
+    user = company.customers.new(name: customer_params[:name], email: customer_params[:email], password: customer_params[:password])
     if user.save
       session[:customer_id] = user.id
       redirect_to '/'

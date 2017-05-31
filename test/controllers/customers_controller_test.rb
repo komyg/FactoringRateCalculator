@@ -12,7 +12,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create new user and new company" do
-    post @createUserUrl, params: { name: "Luke Skywalker", email: "luke.skywalker@starwars.com", password: "password", company_name: "Lucasfilm" }
+    post @createUserUrl, params: { customer: { name: "Luke Skywalker", email: "luke.skywalker@starwars.com", password: "password", company_name: "Lucasfilm" } }
     assert_redirected_to "/"
 
     # Check if the user and company was created on the database.
@@ -20,6 +20,5 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
     assert company
     customer = Customer.find_by(email: "luke.skywalker@starwars.com")
     assert customer
-    puts "Password: #{customer.password}"
   end
 end
