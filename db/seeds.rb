@@ -13,10 +13,10 @@ if Rails.env == "development" || Rails.env == "test"
   microsoft = Company.create!(name: "Microsoft")
   bradesco = Company.create!(name: "Bradesco")
 
-  customer = Customer.create!(name: "Leon Schmidt", email: "leon.schmidt@avaya.com", company_id: avaya.id)
-  Customer.create!(name: "Teri Wright", email: "teri.wright@avaya.com", company_id: avaya.id)
-  Customer.create!(name: "Jasmine Bush", email: "jasmine.bush@microsoft.com", company_id: microsoft.id)
-  Customer.create!(name: "Jake Blair", email: "jake.blair@bradesco.com.br", company_id: bradesco.id)
+  customer = Customer.create!(name: "Leon Schmidt", email: "leon.schmidt@avaya.com", password: "password", company_id: avaya.id)
+  Customer.create!(name: "Teri Wright", email: "teri.wright@avaya.com", password: "password", company_id: avaya.id)
+  Customer.create!(name: "Jasmine Bush", email: "jasmine.bush@microsoft.com", password: "password", company_id: microsoft.id)
+  Customer.create!(name: "Jake Blair", email: "jake.blair@bradesco.com.br", password: "password", company_id: bradesco.id)
 
   rate = Rate.create!(rate: 0.0165, days: 10, default_rate: true)
 

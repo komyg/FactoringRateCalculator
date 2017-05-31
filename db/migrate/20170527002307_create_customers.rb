@@ -3,6 +3,7 @@ class CreateCustomers < ActiveRecord::Migration[5.1]
     create_table :customers do |t|
       t.column :name, :string
       t.column :email, :string
+      t.column :password_digest, :string
       t.timestamps
     end
 
