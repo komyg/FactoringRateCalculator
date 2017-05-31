@@ -18,12 +18,12 @@ if Rails.env == "development" || Rails.env == "test"
   Customer.create!(name: "Jasmine Bush", email: "jasmine.bush@microsoft.com", password: "password", company_id: microsoft.id)
   Customer.create!(name: "Jake Blair", email: "jake.blair@bradesco.com.br", password: "password", company_id: bradesco.id)
 
-  rate = Rate.create!(rate: 0.0165, days: 10, default_rate: true)
+  rate = Rate.create!(rate: 0.0165, days: 10, min_days: 10, min_title_value: 500, default_rate: true)
 
   Request.create!(title_value: 1500, term: 28, monthly_revenue: 75000, receivable_value: 1425.75, rate_id: rate.id, customer_id: customer.id)
 
 elsif Rails.env == "production"
 
-  Rate.create(rate: 0.0165, days: 10, default_rate: true)
+  Rate.create(rate: 0.0165, days: 10, min_days: 10, min_monthly_revenue: 500, default_rate: true)
 
 end

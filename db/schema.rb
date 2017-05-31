@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20170529145303) do
     t.decimal "rate", precision: 8, scale: 5
     t.integer "days"
     t.decimal "monthy_revenue", precision: 15, scale: 3
+    t.integer "min_days"
+    t.decimal "min_title_value", precision: 15, scale: 3
     t.boolean "default_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

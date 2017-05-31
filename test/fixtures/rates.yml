@@ -9,4 +9,6 @@ one:
   id: 1
   rate: 0.0165
   days: 10
+  min_days: 10
+  min_title_value: 500
   default_rate: true
